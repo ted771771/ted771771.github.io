@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Hello Friend</title>
+    
+    
+    
+    <link>/posts/</link>
+    <description>Recent content in Posts on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 11 Jun 2022 07:50:35 -0700</lastBuildDate>
+    
+	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux無密碼登入</title>
+      <link>/posts/new_post_20220625/</link>
+      <pubDate>Sat, 11 Jun 2022 07:50:35 -0700</pubDate>
+      
+      <guid>/posts/new_post_20220625/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          最近發生一個很搞笑的事，只是因為AWS無法使用只好在本地做實驗竟然花了一下午才修好Linux無密碼登入,於是寫個草稿紀錄一下
+首先透過ssh-keygen生成密鑰並使用安靜模式，自動化必備 cat /dev/zero | ssh-keygen -q -N &amp;quot;&amp;quot; 將公鑰加到authorized_keys cat ~/.ssh/id_rsa.pub &amp;gt;&amp;gt; ~/.ssh/authorized_keys 如果是使用ssh-copy-id生成的authorized_keys會自動設為600，而自行創建的file記得要改權限，不然會無法登入而且error log就只顯示登入失敗這要怎debug??? chmod 600 ~/.ssh/authorized_keys 接著要修改sshd_config，可以透過vi或sed sudo vi /etc/ssh/sshd_config PermitRootLogin yes PubkeyAuthentication yes sudo sed -i s/#PubkeyAuthentication.*/PubkeyAuthentication\ yes/ /etc/ssh/sshd_config sudo sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config 接著重啟sshd服務 sudo systemctl restart sshd 最後測試一下 ssh $USER@127.0.0.1 
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>
