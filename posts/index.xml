@@ -9,17 +9,38 @@
     <description>Recent content in Posts on Hello Friend</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Jun 2022 07:50:35 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jun 2022 05:47:27 -0700</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Linux無密碼登入</title>
+      <title>客製化個人專頁</title>
       <link>/posts/new_post_20220625/</link>
-      <pubDate>Sat, 11 Jun 2022 07:50:35 -0700</pubDate>
+      <pubDate>Sat, 25 Jun 2022 05:47:27 -0700</pubDate>
       
       <guid>/posts/new_post_20220625/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          今天花了一下午終於把個人專頁做好，紀錄一下過程下次就不用查半天文件
+#新增一個新頁面 hugo new about/index.html  然後在content/about/index.html插入{{ about-me }}並在themes/hello-friend/layouts/shortcodes底下創建about-me.html然後就可以在裡面編輯屬於自己的介紹頁面
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Linux無密碼登入</title>
+      <link>/posts/new_post_20220611/</link>
+      <pubDate>Sat, 11 Jun 2022 07:50:35 -0700</pubDate>
+      
+      <guid>/posts/new_post_20220611/</guid>
       <description>
         
           

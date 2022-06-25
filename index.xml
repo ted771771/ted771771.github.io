@@ -9,36 +9,15 @@
     <description>Recent content on Hello Friend</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Jun 2022 03:50:31 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jun 2022 05:47:27 -0700</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>About</title>
-      <link>/about/</link>
-      <pubDate>Sat, 25 Jun 2022 03:50:31 -0700</pubDate>
-      
-      <guid>/about/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-            Lorem Ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi assumenda cumque deserunt dolorum ex exercitationem.
-author John Doe  tags  design front end            watch on youtube   
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Linux無密碼登入</title>
+      <title>客製化個人專頁</title>
       <link>/posts/new_post_20220625/</link>
-      <pubDate>Sat, 11 Jun 2022 07:50:35 -0700</pubDate>
+      <pubDate>Sat, 25 Jun 2022 05:47:27 -0700</pubDate>
       
       <guid>/posts/new_post_20220625/</guid>
       <description>
@@ -49,8 +28,50 @@ author John Doe  tags  design front end            watch on youtube
         
         
         
+          今天花了一下午終於把個人專頁做好，紀錄一下過程下次就不用查半天文件
+#新增一個新頁面 hugo new about/index.html  然後在content/about/index.html插入{{ about-me }}並在themes/hello-friend/layouts/shortcodes底下創建about-me.html然後就可以在裡面編輯屬於自己的介紹頁面
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Linux無密碼登入</title>
+      <link>/posts/new_post_20220611/</link>
+      <pubDate>Sat, 11 Jun 2022 07:50:35 -0700</pubDate>
+      
+      <guid>/posts/new_post_20220611/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
           最近發生一個很搞笑的事，只是因為AWS無法使用只好在本地做實驗竟然花了一下午才修好Linux無密碼登入,於是寫個草稿紀錄一下
 首先透過ssh-keygen生成密鑰並使用安靜模式，自動化必備 cat /dev/zero | ssh-keygen -q -N &amp;quot;&amp;quot; 將公鑰加到authorized_keys cat ~/.ssh/id_rsa.pub &amp;gt;&amp;gt; ~/.ssh/authorized_keys 如果是使用ssh-copy-id生成的authorized_keys會自動設為600，而自行創建的file記得要改權限，不然會無法登入而且error log就只顯示登入失敗這要怎debug??? chmod 600 ~/.ssh/authorized_keys 接著要修改sshd_config，可以透過vi或sed sudo vi /etc/ssh/sshd_config PermitRootLogin yes PubkeyAuthentication yes sudo sed -i s/#PubkeyAuthentication.*/PubkeyAuthentication\ yes/ /etc/ssh/sshd_config sudo sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config 接著重啟sshd服務 sudo systemctl restart sshd 最後測試一下 ssh $USER@127.0.0.1 
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+            Student_3R 小工程師一枚專注於DevOps平常喜歡寫一些小玩具歡迎來到我的部落格
+   Skill   Linux Python Container ecosystem         
           
         
         </description>
