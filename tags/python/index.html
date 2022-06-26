@@ -3,7 +3,7 @@
   <head>
     
       <title>
-        404 Page not found ::
+        python ::
         Hello Friend — A simple theme for Hugo
       </title>
     
@@ -18,7 +18,7 @@
   content=""
 />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="/404.html" />
+<link rel="canonical" href="/tags/python/" />
 
 
 
@@ -46,19 +46,20 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="404 Page not found"/>
+<meta name="twitter:title" content="python"/>
 <meta name="twitter:description" content=""/>
 
 
 
-<meta property="og:title" content="404 Page not found" />
+<meta property="og:title" content="python" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="/404.html" />
-<meta property="og:site_name" content="Hello Friend" />
+<meta property="og:url" content="/tags/python/" />
+<meta property="og:updated_time" content="2022-06-25T20:12:07-07:00" /><meta property="og:site_name" content="Hello Friend" />
 
 
 
+<link rel="alternate" type="application/rss+xml" href="/tags/python/index.xml" title="Hello Friend" />
 
 
 
@@ -146,42 +147,60 @@
 
       <div class="content">
         
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/404.html">404 Page not found</a>
-    </h1>
-    <div class="post-content">
-      <p>
-        Hmm&hellip; Sorry, this page seems to be missing.
-      </p>
+  <div class="posts">
+    
+      <div class="post on-list">
+        <h1 class="post-title"><a href="/posts/new_post_20220626/">Ansible Web API</a></h1>
+        <div class="post-meta">
+          
+            <span class="post-date">
+              2022-06-25
+            </span>
 
-      
-        <p>
-          Maybe these tags will help you find what you&rsquo;re looking for. 😄
-        </p>
-        <h2>Tags</h2>
-        <div class="terms">
-          <ul class="terms__list">
             
-              <li class="terms__term">
-                <a href="/tags/ansible/">#Ansible</a
-                ><span class="terms__term-count">1</span>
-              </li>
-            
-              <li class="terms__term">
-                <a href="/tags/linux/">#linux</a
-                ><span class="terms__term-count">1</span>
-              </li>
-            
-              <li class="terms__term">
-                <a href="/tags/python/">#python</a
-                ><span class="terms__term-count">1</span>
-              </li>
-            
-          </ul>
+          
+          
+
+
+          
         </div>
-      
-    </div>
+
+        
+          <span class="post-tags">
+            
+              <a href="/tags/ansible/">#Ansible</a>&nbsp;
+            
+              <a href="/tags/python/">#python</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+        <div class="post-content">
+          
+            
+              origin author: Rikesh 寫個小玩具讀取從Ansible Web讀取資料, 希望有一天也能成為contributer
+#!/usr/bin/python3 import requests import json class Auto_ops: # attribute api_token = &quot;&quot; origin_url = &quot;http://localhost:10445&quot; headers = { 'Content-type': 'application/json', 'Accept': 'application/json', &quot;Authorization&quot;: api_token } id_project = &quot;&quot; # Constructor def __init__(self, origin_url): self.api_token = self.set_conf() self.origin_url = origin_url def set_conf(self): # Opening JSON file file = open('configmap.json') # returns JSON object as a dictionary data = json.load(file) api_token = &quot;Bearer&quot; + &quot; &quot; + data[&quot;token&quot;] self.
+            
+          
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/posts/new_post_20220626/"
+              >Read more →</a
+            >
+          </div>
+        
+      </div>
+    
+    <div class="pagination">
+  <div class="pagination__buttons">
+    
+    
+  </div>
+</div>
+
   </div>
 
       </div>

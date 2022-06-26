@@ -3,13 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/tags/ansible/</loc>
+    <lastmod>2022-06-25T20:12:07-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/new_post_20220626/</loc>
+    <lastmod>2022-06-25T20:12:07-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/</loc>
-    <lastmod>2022-06-25T05:47:27-07:00</lastmod>
+    <lastmod>2022-06-25T20:12:07-07:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/</loc>
-    <lastmod>2022-06-25T05:47:27-07:00</lastmod>
+    <lastmod>2022-06-25T20:12:07-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/python/</loc>
+    <lastmod>2022-06-25T20:12:07-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2022-06-25T20:12:07-07:00</lastmod>
   </url>
   
   <url>
@@ -24,11 +44,6 @@
   
   <url>
     <loc>/posts/new_post_20220611/</loc>
-    <lastmod>2022-06-11T07:50:35-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2022-06-11T07:50:35-07:00</lastmod>
   </url>
   
