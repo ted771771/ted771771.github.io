@@ -28,7 +28,7 @@
         
         
         
-          origin author: Rikesh 寫個小玩具讀取從Ansible Web讀取資料, 希望有一天也能成為contributer
+          origin author: Rikesh 寫個小玩具讀取從Ansible Web讀取資料, 可以拿來當RHCE練習雖然不像CCIE稀有，薪水也比不上當紅的CKAD
 #!/usr/bin/python3 import requests import json class Auto_ops: # attribute api_token = &amp;quot;&amp;quot; origin_url = &amp;quot;http://localhost:10445&amp;quot; headers = { &#39;Content-type&#39;: &#39;application/json&#39;, &#39;Accept&#39;: &#39;application/json&#39;, &amp;quot;Authorization&amp;quot;: api_token } id_project = &amp;quot;&amp;quot; # Constructor def __init__(self, origin_url): self.api_token = self.set_conf() self.origin_url = origin_url def set_conf(self): # Opening JSON file file = open(&#39;configmap.json&#39;) # returns JSON object as a dictionary data = json.load(file) api_token = &amp;quot;Bearer&amp;quot; + &amp;quot; &amp;quot; + data[&amp;quot;token&amp;quot;] self.
           
         
