@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="origin author: Rikesh 寫個小玩具讀取從Ansible Web讀取資料, 可以拿來當RHCE練習雖然不像CCIE稀有，薪水也比不上當紅的CKAD
+  content="origin author: Rikesh 寫個小玩具讀取從Ansible Web讀取資料, 可以拿來當RHCE練習雖然不像CCIE稀有，薪水也比不上當紅的CKAD但是過個小日子還行
 #!/usr/bin/python3 import requests import json class Auto_ops: # attribute api_token = &amp;quot;&amp;quot; origin_url = &amp;quot;http://localhost:10445&amp;quot; headers = { &#39;Content-type&#39;: &#39;application/json&#39;, &#39;Accept&#39;: &#39;application/json&#39;, &amp;quot;Authorization&amp;quot;: api_token } id_project = &amp;quot;&amp;quot; # Constructor def __init__(self, origin_url): self.api_token = self.set_conf() self.origin_url = origin_url def set_conf(self): # Opening JSON file file = open(&#39;configmap.json&#39;) # returns JSON object as a dictionary data = json.load(file) api_token = &amp;quot;Bearer&amp;quot; &#43; &amp;quot; &amp;quot; &#43; data[&amp;quot;token&amp;quot;] self."
 />
 <meta
@@ -48,13 +48,13 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ansible Web API"/>
-<meta name="twitter:description" content="origin author: Rikesh 寫個小玩具讀取從Ansible Web讀取資料, 可以拿來當RHCE練習雖然不像CCIE稀有，薪水也比不上當紅的CKAD
+<meta name="twitter:description" content="origin author: Rikesh 寫個小玩具讀取從Ansible Web讀取資料, 可以拿來當RHCE練習雖然不像CCIE稀有，薪水也比不上當紅的CKAD但是過個小日子還行
 #!/usr/bin/python3 import requests import json class Auto_ops: # attribute api_token = &quot;&quot; origin_url = &quot;http://localhost:10445&quot; headers = { &#39;Content-type&#39;: &#39;application/json&#39;, &#39;Accept&#39;: &#39;application/json&#39;, &quot;Authorization&quot;: api_token } id_project = &quot;&quot; # Constructor def __init__(self, origin_url): self.api_token = self.set_conf() self.origin_url = origin_url def set_conf(self): # Opening JSON file file = open(&#39;configmap.json&#39;) # returns JSON object as a dictionary data = json.load(file) api_token = &quot;Bearer&quot; &#43; &quot; &quot; &#43; data[&quot;token&quot;] self."/>
 
 
 
 <meta property="og:title" content="Ansible Web API" />
-<meta property="og:description" content="origin author: Rikesh 寫個小玩具讀取從Ansible Web讀取資料, 可以拿來當RHCE練習雖然不像CCIE稀有，薪水也比不上當紅的CKAD
+<meta property="og:description" content="origin author: Rikesh 寫個小玩具讀取從Ansible Web讀取資料, 可以拿來當RHCE練習雖然不像CCIE稀有，薪水也比不上當紅的CKAD但是過個小日子還行
 #!/usr/bin/python3 import requests import json class Auto_ops: # attribute api_token = &quot;&quot; origin_url = &quot;http://localhost:10445&quot; headers = { &#39;Content-type&#39;: &#39;application/json&#39;, &#39;Accept&#39;: &#39;application/json&#39;, &quot;Authorization&quot;: api_token } id_project = &quot;&quot; # Constructor def __init__(self, origin_url): self.api_token = self.set_conf() self.origin_url = origin_url def set_conf(self): # Opening JSON file file = open(&#39;configmap.json&#39;) # returns JSON object as a dictionary data = json.load(file) api_token = &quot;Bearer&quot; &#43; &quot; &quot; &#43; data[&quot;token&quot;] self." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/new_post_20220626/" />
@@ -187,7 +187,7 @@
     <div class="post-content">
       
       <h4 id="origin-author-rikeshhttpsdebugthisdev">origin author: <a href="https://debugthis.dev/">Rikesh</a></h4>
-<p>寫個小玩具讀取從Ansible Web讀取資料, 可以拿來當RHCE練習雖然不像CCIE稀有，薪水也比不上當紅的CKAD</p>
+<p>寫個小玩具讀取從Ansible Web讀取資料, 可以拿來當RHCE練習雖然不像CCIE稀有，薪水也比不上當紅的CKAD但是過個小日子還行</p>
 <pre><code>#!/usr/bin/python3
 
 import requests

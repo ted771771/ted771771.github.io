@@ -192,7 +192,7 @@
       <div class="post-content">
         
           
-            origin author: Rikesh 寫個小玩具讀取從Ansible Web讀取資料, 可以拿來當RHCE練習雖然不像CCIE稀有，薪水也比不上當紅的CKAD
+            origin author: Rikesh 寫個小玩具讀取從Ansible Web讀取資料, 可以拿來當RHCE練習雖然不像CCIE稀有，薪水也比不上當紅的CKAD但是過個小日子還行
 #!/usr/bin/python3 import requests import json class Auto_ops: # attribute api_token = &quot;&quot; origin_url = &quot;http://localhost:10445&quot; headers = { 'Content-type': 'application/json', 'Accept': 'application/json', &quot;Authorization&quot;: api_token } id_project = &quot;&quot; # Constructor def __init__(self, origin_url): self.api_token = self.set_conf() self.origin_url = origin_url def set_conf(self): # Opening JSON file file = open('configmap.json') # returns JSON object as a dictionary data = json.load(file) api_token = &quot;Bearer&quot; + &quot; &quot; + data[&quot;token&quot;] self.
           
         
