@@ -56,7 +56,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2022-06-25T20:12:07-07:00" /><meta property="og:site_name" content="Hello Friend" />
+<meta property="og:updated_time" content="2022-07-01T05:19:40-07:00" /><meta property="og:site_name" content="Hello Friend" />
 
 
 
@@ -162,6 +162,36 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/new_post_20220701/">RH124</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2022-07-01
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/new_post_20220701/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="/posts/new_post_20220626/">Ansible Web API</a></h1>
       <div class="post-meta">
         
@@ -192,8 +222,8 @@
       <div class="post-content">
         
           
-            origin author: Rikesh 寫個小玩具讀取從Ansible Web讀取資料, 可以拿來當RHCE練習雖然不像CCIE稀有，薪水也比不上當紅的CKAD但是過個小日子還行
-#!/usr/bin/python3 import requests import json class Auto_ops: # attribute api_token = &quot;&quot; origin_url = &quot;http://localhost:10445&quot; headers = { 'Content-type': 'application/json', 'Accept': 'application/json', &quot;Authorization&quot;: api_token } id_project = &quot;&quot; # Constructor def __init__(self, origin_url): self.api_token = self.set_conf() self.origin_url = origin_url def set_conf(self): # Opening JSON file file = open('configmap.json') # returns JSON object as a dictionary data = json.load(file) api_token = &quot;Bearer&quot; + &quot; &quot; + data[&quot;token&quot;] self.
+            original author: Rikesh 寫個小玩具讀取從Ansible Web讀取資料, 可以拿來當RHCE練習雖然不像CCIE稀有，薪水也比不上當紅的CKAD但是過個小日子還行
+#!/usr/bin/python3 import requests import json class Auto_ops: # attribute api_token = &quot;&quot; original_url = &quot;http://localhost:10445&quot; headers = { 'Content-type': 'application/json', 'Accept': 'application/json', &quot;Authorization&quot;: api_token } id_project = &quot;&quot; # Constructor def __init__(self, original_url): self.api_token = self.set_conf() self.original_url = original_url def set_conf(self): # Opening JSON file file = open('configmap.json') # returns JSON object as a dictionary data = json.load(file) api_token = &quot;Bearer&quot; + &quot; &quot; + data[&quot;token&quot;] self.
           
         
       </div>
