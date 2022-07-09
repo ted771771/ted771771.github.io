@@ -71,7 +71,6 @@
         
           今天花了一下午終於把個人專頁做好，紀錄一下過程下次就不用查半天文件
 #新增一個新頁面 hugo new about/index.html  然後在content/about/index.html插入{{ about-me }}並在themes/hello-friend/layouts/shortcodes底下創建about-me.html然後就可以在裡面編輯屬於自己的介紹頁面,相關CSS與JS檔則放在asset底下
-Ref https://codepen.io/KaioRocha/pen/orpKxq
           
         
         </description>
