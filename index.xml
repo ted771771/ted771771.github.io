@@ -9,10 +9,32 @@
     <description>Recent content on Hello Friend</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Jul 2022 05:19:40 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 23 Jul 2022 00:11:00 -0700</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sysprep</title>
+      <link>/posts/new_post_20220723/</link>
+      <pubDate>Sat, 23 Jul 2022 00:11:00 -0700</pubDate>
+      
+      <guid>/posts/new_post_20220723/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Original : MS Docs Sysprep (Generalize) a Windows installation
+因為習慣在VM上工作總會建立一些系統樣板如果透過樣本產生新Windows Server就可能產生SID衝突這時就要透過Sysprep 重置System SID
+whoami /user 重置安全識別碼(SID) #generalize, oobe C:\Windows\System32\Sysprep\sysprep.exe 再看一次SID就會改變 whoami /user 
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>RH124 </title>
@@ -48,7 +70,7 @@
         
         
         
-          original author: Rikesh 寫個小玩具讀取從Ansible Web讀取資料, 可以拿來當RHCE練習雖然不像CCIE稀有，薪水也比不上當紅的CKAD但是過個小日子還行
+          Original author: Rikesh 寫個小玩具讀取從Ansible Web讀取資料, 可以拿來當RHCE練習雖然不像CCIE稀有，薪水也比不上當紅的CKAD但是過個小日子還行
 #!/usr/bin/python3 import requests import json class Auto_ops: # attribute api_token = &amp;quot;&amp;quot; original_url = &amp;quot;http://localhost:10445&amp;quot; headers = { &#39;Content-type&#39;: &#39;application/json&#39;, &#39;Accept&#39;: &#39;application/json&#39;, &amp;quot;Authorization&amp;quot;: api_token } id_project = &amp;quot;&amp;quot; # Constructor def __init__(self, original_url): self.api_token = self.set_conf() self.original_url = original_url def set_conf(self): # Opening JSON file file = open(&#39;configmap.json&#39;) # returns JSON object as a dictionary data = json.load(file) api_token = &amp;quot;Bearer&amp;quot; + &amp;quot; &amp;quot; + data[&amp;quot;token&amp;quot;] self.
           
         
