@@ -15,6 +15,27 @@
     
     
     <item>
+      <title>LF轉CRLF</title>
+      <link>/posts/new_post_20220724/</link>
+      <pubDate>Sat, 23 Jul 2022 00:11:00 -0700</pubDate>
+      
+      <guid>/posts/new_post_20220724/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          之前跟同事聊天說現在notepad++不是只剩下更換編碼與隱藏字元的功能但Notepad++得一個一個改,於是花了一個周末研究使用工具改
+windows - name: covert LF to CRLF hosts: windows_server tasks: - name: win_lineinfile: path: C:\Users\Administrator\Desktop\config line: &amp;quot; &amp;quot; newline: windows 
+          
+        
+        </description>
+    </item>
+    
+    <item>
       <title>Sysprep</title>
       <link>/posts/new_post_20220723/</link>
       <pubDate>Sat, 23 Jul 2022 00:11:00 -0700</pubDate>
