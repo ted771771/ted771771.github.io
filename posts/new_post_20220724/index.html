@@ -11,8 +11,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="之前跟同事聊天說現在notepad&#43;&#43;不是只剩下更換編碼與隱藏字元的功能但Notepad&#43;&#43;得一個一個改,於是花了一個周末研究使用工具改
-windows - name: covert LF to CRLF hosts: windows_server tasks: - name: win_lineinfile: path: C:\Users\Administrator\Desktop\config line: &amp;quot; &amp;quot; newline: windows "
+  content="之前跟同事聊天說現在notepad&#43;&#43;不是只剩下更換編碼與隱藏字元的功能且Notepad&#43;&#43;得一個一個改於是花了一個周末研究使用工具改
+簡易版演算法: 1.透過win_find找出所有file存到list_f
+2.使用with_items以迴圈的方式讀取list_f路徑將丟給win_lineinfile
+3.透過win_lineinfile的參數newline將換行符號改成CRLF
+#步驟很簡單吧當然可以寫得更好些
+- name: covert LF to CRLF hosts: windows_server tasks: - name: Find files with .log and .out extension using powershell wildcards ansible.windows.win_find: paths: D:\Temp patterns: [ &#39;*.log&#39;, &#39;*.out&#39; ] register: list_f - name: win_lineinfile: path: &amp;quot;{{ item.path }}&amp;quot; line: &amp;quot; &amp;quot; newline: windows with_items: &#39;{{ list_f.files }}&#39; "
 />
 <meta
   name="keywords"
@@ -48,14 +52,22 @@ windows - name: covert LF to CRLF hosts: windows_server tasks: - name: win_linei
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="LF轉CRLF"/>
-<meta name="twitter:description" content="之前跟同事聊天說現在notepad&#43;&#43;不是只剩下更換編碼與隱藏字元的功能但Notepad&#43;&#43;得一個一個改,於是花了一個周末研究使用工具改
-windows - name: covert LF to CRLF hosts: windows_server tasks: - name: win_lineinfile: path: C:\Users\Administrator\Desktop\config line: &quot; &quot; newline: windows "/>
+<meta name="twitter:description" content="之前跟同事聊天說現在notepad&#43;&#43;不是只剩下更換編碼與隱藏字元的功能且Notepad&#43;&#43;得一個一個改於是花了一個周末研究使用工具改
+簡易版演算法: 1.透過win_find找出所有file存到list_f
+2.使用with_items以迴圈的方式讀取list_f路徑將丟給win_lineinfile
+3.透過win_lineinfile的參數newline將換行符號改成CRLF
+#步驟很簡單吧當然可以寫得更好些
+- name: covert LF to CRLF hosts: windows_server tasks: - name: Find files with .log and .out extension using powershell wildcards ansible.windows.win_find: paths: D:\Temp patterns: [ &#39;*.log&#39;, &#39;*.out&#39; ] register: list_f - name: win_lineinfile: path: &quot;{{ item.path }}&quot; line: &quot; &quot; newline: windows with_items: &#39;{{ list_f.files }}&#39; "/>
 
 
 
 <meta property="og:title" content="LF轉CRLF" />
-<meta property="og:description" content="之前跟同事聊天說現在notepad&#43;&#43;不是只剩下更換編碼與隱藏字元的功能但Notepad&#43;&#43;得一個一個改,於是花了一個周末研究使用工具改
-windows - name: covert LF to CRLF hosts: windows_server tasks: - name: win_lineinfile: path: C:\Users\Administrator\Desktop\config line: &quot; &quot; newline: windows " />
+<meta property="og:description" content="之前跟同事聊天說現在notepad&#43;&#43;不是只剩下更換編碼與隱藏字元的功能且Notepad&#43;&#43;得一個一個改於是花了一個周末研究使用工具改
+簡易版演算法: 1.透過win_find找出所有file存到list_f
+2.使用with_items以迴圈的方式讀取list_f路徑將丟給win_lineinfile
+3.透過win_lineinfile的參數newline將換行符號改成CRLF
+#步驟很簡單吧當然可以寫得更好些
+- name: covert LF to CRLF hosts: windows_server tasks: - name: Find files with .log and .out extension using powershell wildcards ansible.windows.win_find: paths: D:\Temp patterns: [ &#39;*.log&#39;, &#39;*.out&#39; ] register: list_f - name: win_lineinfile: path: &quot;{{ item.path }}&quot; line: &quot; &quot; newline: windows with_items: &#39;{{ list_f.files }}&#39; " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/new_post_20220724/" />
 <meta property="article:published_time" content="2022-07-23T00:11:00-07:00" />
@@ -184,16 +196,29 @@ windows - name: covert LF to CRLF hosts: windows_server tasks: - name: win_linei
 
     <div class="post-content">
       
-      <p>之前跟同事聊天說現在notepad++不是只剩下更換編碼與隱藏字元的功能但Notepad++得一個一個改,於是花了一個周末研究使用工具改</p>
-<h3 id="windows">windows</h3>
+      <p>之前跟同事聊天說現在notepad++不是只剩下更換編碼與隱藏字元的功能且Notepad++得一個一個改於是花了一個周末研究使用工具改</p>
+<p>簡易版演算法: <br>
+1.透過win_find找出所有file存到list_f<br>
+2.使用with_items以迴圈的方式讀取list_f路徑將丟給win_lineinfile<br>
+3.透過win_lineinfile的參數newline將換行符號改成CRLF<br>
+#步驟很簡單吧當然可以寫得更好些</p>
 <pre><code>- name: covert LF to CRLF
   hosts: windows_server
   tasks:
-    - name: 
-      win_lineinfile:
-        path: C:\Users\Administrator\Desktop\config
-        line: &quot; &quot;
-        newline: windows
+  - name: Find files with .log and .out extension using powershell wildcards
+    ansible.windows.win_find:
+      paths: D:\Temp
+      patterns: [ '*.log', '*.out' ]
+    register: list_f
+
+  - name: 
+    win_lineinfile:
+      path: &quot;{{ item.path }}&quot;
+      line: &quot; &quot;
+      newline: windows
+    with_items:
+      '{{ list_f.files }}'
+
 </code></pre>
     </div>
     
