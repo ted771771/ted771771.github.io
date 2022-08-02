@@ -3,7 +3,7 @@
   <head>
     
       <title>
-        LF轉CRLF ::
+        耍蠢日記 LVM2 ::
         Hello Friend — A simple theme for Hugo
       </title>
     
@@ -11,19 +11,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="之前跟同事聊天說現在notepad&#43;&#43;不是只剩下更換編碼與隱藏字元的功能且Notepad&#43;&#43;得一個一個改於是花了一個周末研究使用工具改
-簡易版演算法: 1.透過win_find找出所有file存到list_f
-2.使用with_items以迴圈的方式讀取list_f路徑將丟給win_lineinfile
-3.透過win_lineinfile的參數newline將換行符號改成CRLF
-#步驟很簡單吧當然可以寫得更好些
-- name: covert LF to CRLF hosts: windows_server tasks: - name: Find files with .log and .out extension using powershell wildcards ansible.windows.win_find: paths: D:\Temp patterns: [ &#39;*.log&#39;, &#39;*.out&#39; ] register: list_f - name: win_lineinfile: path: &amp;quot;{{ item.path }}&amp;quot; line: &amp;quot; &amp;quot; newline: windows with_items: &#39;{{ list_f.files }}&#39; "
+  content="最近在本地裝Docker時發現/var空間用盡，以前用GKE, AWS這類PaaS, SaaS服務用得太開心空間不足就打個API出去，而且Service都是無狀態(stateless)自然不吃硬碟，至於DB裡只擺Index像影像這種大容量檔案擺在Google Storage/S3所以大部分時候都是IO, CPU, Mem先崩潰，很少看IaaS設計所以今天就傻傻的用光硬碟空間，上Stack Overflow網友推薦去Systemd 改Docker FS的預設路徑，但考量還要往上疊K8s Stack怕問題越滾越大於是研究如何改LVM，才發現技術進步比以前上課交的還簡單
+ PV(Phyical Volume): 就是一顆一顆硬碟 VG(Volume Group): 一堆硬碟組成的邏輯單元，計算機科學最喜歡的抽象化思維 LV(Logical Volume): 從上面的邏輯單元中挖出空間 只要了解以上概念網路上很多指令教學 跟K8s的PV(Phyical Volume), PVC(Persistent Volume Claim)概念比較不一樣  "
 />
 <meta
   name="keywords"
   content=""
 />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="/posts/new_post_20220724/" />
+<link rel="canonical" href="/posts/new_post_20220802/" />
 
 
 
@@ -51,27 +47,19 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="LF轉CRLF"/>
-<meta name="twitter:description" content="之前跟同事聊天說現在notepad&#43;&#43;不是只剩下更換編碼與隱藏字元的功能且Notepad&#43;&#43;得一個一個改於是花了一個周末研究使用工具改
-簡易版演算法: 1.透過win_find找出所有file存到list_f
-2.使用with_items以迴圈的方式讀取list_f路徑將丟給win_lineinfile
-3.透過win_lineinfile的參數newline將換行符號改成CRLF
-#步驟很簡單吧當然可以寫得更好些
-- name: covert LF to CRLF hosts: windows_server tasks: - name: Find files with .log and .out extension using powershell wildcards ansible.windows.win_find: paths: D:\Temp patterns: [ &#39;*.log&#39;, &#39;*.out&#39; ] register: list_f - name: win_lineinfile: path: &quot;{{ item.path }}&quot; line: &quot; &quot; newline: windows with_items: &#39;{{ list_f.files }}&#39; "/>
+<meta name="twitter:title" content="耍蠢日記 LVM2"/>
+<meta name="twitter:description" content="最近在本地裝Docker時發現/var空間用盡，以前用GKE, AWS這類PaaS, SaaS服務用得太開心空間不足就打個API出去，而且Service都是無狀態(stateless)自然不吃硬碟，至於DB裡只擺Index像影像這種大容量檔案擺在Google Storage/S3所以大部分時候都是IO, CPU, Mem先崩潰，很少看IaaS設計所以今天就傻傻的用光硬碟空間，上Stack Overflow網友推薦去Systemd 改Docker FS的預設路徑，但考量還要往上疊K8s Stack怕問題越滾越大於是研究如何改LVM，才發現技術進步比以前上課交的還簡單
+ PV(Phyical Volume): 就是一顆一顆硬碟 VG(Volume Group): 一堆硬碟組成的邏輯單元，計算機科學最喜歡的抽象化思維 LV(Logical Volume): 從上面的邏輯單元中挖出空間 只要了解以上概念網路上很多指令教學 跟K8s的PV(Phyical Volume), PVC(Persistent Volume Claim)概念比較不一樣  "/>
 
 
 
-<meta property="og:title" content="LF轉CRLF" />
-<meta property="og:description" content="之前跟同事聊天說現在notepad&#43;&#43;不是只剩下更換編碼與隱藏字元的功能且Notepad&#43;&#43;得一個一個改於是花了一個周末研究使用工具改
-簡易版演算法: 1.透過win_find找出所有file存到list_f
-2.使用with_items以迴圈的方式讀取list_f路徑將丟給win_lineinfile
-3.透過win_lineinfile的參數newline將換行符號改成CRLF
-#步驟很簡單吧當然可以寫得更好些
-- name: covert LF to CRLF hosts: windows_server tasks: - name: Find files with .log and .out extension using powershell wildcards ansible.windows.win_find: paths: D:\Temp patterns: [ &#39;*.log&#39;, &#39;*.out&#39; ] register: list_f - name: win_lineinfile: path: &quot;{{ item.path }}&quot; line: &quot; &quot; newline: windows with_items: &#39;{{ list_f.files }}&#39; " />
+<meta property="og:title" content="耍蠢日記 LVM2" />
+<meta property="og:description" content="最近在本地裝Docker時發現/var空間用盡，以前用GKE, AWS這類PaaS, SaaS服務用得太開心空間不足就打個API出去，而且Service都是無狀態(stateless)自然不吃硬碟，至於DB裡只擺Index像影像這種大容量檔案擺在Google Storage/S3所以大部分時候都是IO, CPU, Mem先崩潰，很少看IaaS設計所以今天就傻傻的用光硬碟空間，上Stack Overflow網友推薦去Systemd 改Docker FS的預設路徑，但考量還要往上疊K8s Stack怕問題越滾越大於是研究如何改LVM，才發現技術進步比以前上課交的還簡單
+ PV(Phyical Volume): 就是一顆一顆硬碟 VG(Volume Group): 一堆硬碟組成的邏輯單元，計算機科學最喜歡的抽象化思維 LV(Logical Volume): 從上面的邏輯單元中挖出空間 只要了解以上概念網路上很多指令教學 跟K8s的PV(Phyical Volume), PVC(Persistent Volume Claim)概念比較不一樣  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/new_post_20220724/" />
-<meta property="article:published_time" content="2022-07-23T00:11:00-07:00" />
-<meta property="article:modified_time" content="2022-07-23T00:11:00-07:00" /><meta property="og:site_name" content="Hello Friend" />
+<meta property="og:url" content="/posts/new_post_20220802/" />
+<meta property="article:published_time" content="2022-08-02T05:12:10-07:00" />
+<meta property="article:modified_time" content="2022-08-02T05:12:10-07:00" /><meta property="og:site_name" content="Hello Friend" />
 
 
 
@@ -166,11 +154,11 @@
   
 
   <div class="post">
-    <h1 class="post-title">LF轉CRLF</h1>
+    <h1 class="post-title">耍蠢日記 LVM2</h1>
     <div class="post-meta">
       
         <span class="post-date">
-          2022-07-23
+          2022-08-02
         </span>
 
         
@@ -187,7 +175,7 @@
     
       <span class="post-tags">
         
-          <a href="/tags/windows/">#windows</a>&nbsp;
+          <a href="/tags/linux/">#Linux</a>&nbsp;
         
       </span>
     
@@ -196,30 +184,15 @@
 
     <div class="post-content">
       
-      <p>之前跟同事聊天說現在notepad++不是只剩下更換編碼與隱藏字元的功能且Notepad++得一個一個改於是花了一個周末研究使用工具改</p>
-<p>簡易版演算法: <br>
-1.透過win_find找出所有file存到list_f<br>
-2.使用with_items以迴圈的方式讀取list_f路徑將丟給win_lineinfile<br>
-3.透過win_lineinfile的參數newline將換行符號改成CRLF<br>
-#步驟很簡單吧當然可以寫得更好些</p>
-<pre><code>- name: covert LF to CRLF
-  hosts: windows_server
-  tasks:
-  - name: Find files with .log and .out extension using powershell wildcards
-    ansible.windows.win_find:
-      paths: D:\Temp
-      patterns: [ '*.log', '*.out' ]
-    register: list_f
+      <p>最近在本地裝Docker時發現/var空間用盡，以前用GKE, AWS這類PaaS, SaaS服務用得太開心空間不足就打個API出去，而且Service都是無狀態(stateless)自然不吃硬碟，至於DB裡只擺Index像影像這種大容量檔案擺在Google Storage/S3所以大部分時候都是IO, CPU, Mem先崩潰，很少看IaaS設計所以今天就傻傻的用光硬碟空間，上Stack Overflow網友推薦去Systemd 改Docker FS的預設路徑，但考量還要往上疊K8s Stack怕問題越滾越大於是研究如何改LVM，才發現技術進步比以前上課交的還簡單</p>
+<ul>
+<li>PV(Phyical Volume): 就是一顆一顆硬碟</li>
+<li>VG(Volume Group): 一堆硬碟組成的邏輯單元，計算機科學最喜歡的抽象化思維</li>
+<li>LV(Logical Volume): 從上面的邏輯單元中挖出空間</li>
+<li>只要了解以上概念網路上很多指令教學
+跟K8s的PV(Phyical Volume), PVC(Persistent Volume Claim)概念比較不一樣</li>
+</ul>
 
-  - name: 
-    win_lineinfile:
-      path: &quot;{{ item.path }}&quot;
-      line: &quot; &quot;
-      newline: windows
-    with_items:
-      '{{ list_f.files }}'
-
-</code></pre>
     </div>
     
       
@@ -232,17 +205,10 @@
           </div>
           <div class="pagination__buttons">
             
-              <span class="button previous">
-                <a href="/posts/new_post_20220802/">
-                  <span class="button__icon">←</span>
-                  <span class="button__text">耍蠢日記 LVM2</span>
-                </a>
-              </span>
-            
             
               <span class="button next">
-                <a href="/posts/new_post_20220723/">
-                  <span class="button__text">Sysprep</span>
+                <a href="/posts/new_post_20220724/">
+                  <span class="button__text">LF轉CRLF</span>
                   <span class="button__icon">→</span>
                 </a>
               </span>

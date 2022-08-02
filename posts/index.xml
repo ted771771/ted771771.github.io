@@ -9,10 +9,31 @@
     <description>Recent content in Posts on Hello Friend</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Jul 2022 00:11:00 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 02 Aug 2022 05:12:10 -0700</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>耍蠢日記 LVM2</title>
+      <link>/posts/new_post_20220802/</link>
+      <pubDate>Tue, 02 Aug 2022 05:12:10 -0700</pubDate>
+      
+      <guid>/posts/new_post_20220802/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          最近在本地裝Docker時發現/var空間用盡，以前用GKE, AWS這類PaaS, SaaS服務用得太開心空間不足就打個API出去，而且Service都是無狀態(stateless)自然不吃硬碟，至於DB裡只擺Index像影像這種大容量檔案擺在Google Storage/S3所以大部分時候都是IO, CPU, Mem先崩潰，很少看IaaS設計所以今天就傻傻的用光硬碟空間，上Stack Overflow網友推薦去Systemd 改Docker FS的預設路徑，但考量還要往上疊K8s Stack怕問題越滾越大於是研究如何改LVM，才發現技術進步比以前上課交的還簡單
+ PV(Phyical Volume): 就是一顆一顆硬碟 VG(Volume Group): 一堆硬碟組成的邏輯單元，計算機科學最喜歡的抽象化思維 LV(Logical Volume): 從上面的邏輯單元中挖出空間 只要了解以上概念網路上很多指令教學 跟K8s的PV(Phyical Volume), PVC(Persistent Volume Claim)概念比較不一樣  
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>LF轉CRLF</title>
