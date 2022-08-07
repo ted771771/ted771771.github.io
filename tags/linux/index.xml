@@ -28,8 +28,11 @@
         
         
         
-          最近在本地裝Docker時發現/var空間用盡，以前用GKE, AWS這類PaaS, SaaS服務用得太開心空間不足就打個API出去，而且Service都是無狀態(stateless)自然不吃硬碟，至於DB裡只擺Index像影像這種大容量檔案擺在Google Storage/S3所以大部分時候都是IO, CPU, Mem先崩潰，很少看IaaS設計所以今天就傻傻的用光硬碟空間，上Stack Overflow網友推薦去Systemd 改Docker FS的預設路徑，但考量還要往上疊K8s Stack怕問題越滾越大於是研究如何改LVM，才發現技術進步比以前上課交的還簡單
- PV(Phyical Volume): 就是一顆一顆硬碟 VG(Volume Group): 一堆硬碟組成的邏輯單元，計算機科學最喜歡的抽象化思維 LV(Logical Volume): 從上面的邏輯單元中挖出空間 只要了解以上概念網路上很多指令教學 跟K8s的PV(Phyical Volume), PVC(Persistent Volume Claim)概念比較不一樣  
+          最近在本地裝Docker時發現/var空間用盡，以前用GKE, AWS這類PaaS, SaaS服務用得太開心空間不足就打個API出去，而且Service都是無狀態(stateless)自然不吃硬碟，至於DB裡只擺Index像影像這種大容量檔案擺在Cloud Storage/S3所以大部分時候都是IO, CPU, Mem先崩潰，很少看IaaS設計所以今天就傻傻的用光硬碟空間，上Stack Overflow網友推薦去Systemd 改Docker FS的預設路徑，但考量還要往上疊K8s Stack怕問題越滾越大於是研究如何改LVM，才發現技術進步比以前上課交的還簡單
+ PV(Phyical Volume): 就是一顆一顆硬碟 VG(Volume Group): 一堆硬碟組成的邏輯單元，計算機科學最喜歡的抽象化思維 LV(Logical Volume): 從上面的邏輯單元中挖出空間 只要了解以上概念網路上很多指令教學,跟K8s的PV(Phyical Volume), PVC(Persistent Volume Claim)概念比較不一樣   SaaS EX: Amazon RDS 以前架設DB, 要考慮容量, 備援, 法規, 升降級, 遷移，SaaS就是把這些動作全給雲廠商做了，只需要使用應用一樣使用DB服務
+PssS EX: GKE 讓Master Node, Etcd, 全給雲廠商管理, 要架DB只需要寫Yaml檔但雲廠商只提供平台上面的事情服務備援/升降級&amp;hellip;得自己做
+IaaS EX: EC2
+ 
           
         
         </description>
